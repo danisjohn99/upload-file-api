@@ -24,11 +24,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 // *Login* //
-Route::post('/login', [JWTController::class, 'login']);
+Route::post('/login', [JWTController::class, 'login'])->name('api.authenticate');
 
 // *Operations* //
 Route::group(['middleware' => ['jwt.verify']], function() {
-    Route::post('/upload-pdf', [FileUploaderController::class, 'uploadPdf']);
+    Route::post('/upload-pdf', [FileUploaderController::class, 'uploadPdf'])->name('api.upload.pdf');;
     Route::get('/user-pdf-list', [FileUploaderController::class, 'pdfList']);
 });
     
