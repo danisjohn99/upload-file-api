@@ -62,6 +62,12 @@
            {
             "status": "Token is Invalid"
            }
+           
+           
+  
+## Unit Test
+-  php artisan test --filter AuthTest
+-  php artisan test --filter UploadPdfTest
             
             
 
